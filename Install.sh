@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 echo -e '
 #========================================================#
-#         欢迎使用SSRManager一键化安装脚本               #
+#            欢迎使用SSRManager安装脚本                  #
 #                                                        #
 #	System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+     #
 #	Description: Install ShadowsocksR Manager              #
@@ -40,7 +40,7 @@ echo -e "\n \n \n 正在创建安装目录..."
 			fi
 			echo -e "安装脚本下载失败 !" && exit 1
 	else
-		echo -e "$安装脚本下载完成 !\n正在执行安装...."
+		echo -e "$安装脚本下载完成 !\n正在执行安装....\n\n\n\n\n   "
 		chmod +x /SSRManager/Manager.sh
 		bash /SSRManager/Manager.sh InstallSSR
 	fi

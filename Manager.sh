@@ -365,8 +365,8 @@ Set_config_port(){
 	while true
 	do
 	echo -e "请输入要设置的用户 端口(请勿重复, 用于区分)"
-	stty erase '^H' && read -p "(默认: 123456):" ssr_port
-	[[ -z "$ssr_port" ]] && ssr_port="123456"
+	stty erase '^H' && read -p "(默认: 9119):" ssr_port
+	[[ -z "$ssr_port" ]] && ssr_port="9119"
 	expr ${ssr_port} + 0 &>/dev/null
 	if [[ $? == 0 ]]; then
 		if [[ ${ssr_port} -ge 1 ]] && [[ ${ssr_port} -le 65535 ]]; then
