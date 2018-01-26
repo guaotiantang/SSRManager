@@ -27,7 +27,7 @@ echo -e "\n \n \n 正在创建安装目录..."
 		mkdir /SSRManager/UserDate/
 	fi  
 	
-	if [[ ! -d "${TmpPatch}"]]; then  
+	if [[ ! -d "/SSRManager/ShellTmp/"]]; then  
 		mkdir /SSRManager/ShellTmp/
 	fi  
 	
