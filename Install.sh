@@ -21,17 +21,17 @@ Installed=1
 cd /
 echo -e "\n \n \n 正在创建安装目录..."
 
-	if [ ! -d "$ManagerPatch"]; then  
+	if [[ ! -d "${ManagerPatch}"]]; then  
 	　Installed=0
-		mkdir "$ManagerPatch"
+		mkdir "${ManagerPatch}"
 	fi 
 	 
-	if [ ! -d "$UDPatch"]; then  
-		mkdir "$UDPatch"
+	if [[ ! -d "{$UDPatch}"]]; then  
+		mkdir "${$UDPatch}"
 	fi  
 	
-	if [ ! -d "$TmpPatch"]; then  
-		mkdir "$TmpPatch"
+	if [[ ! -d "${TmpPatch}"]]; then  
+		mkdir "${TmpPatch}"
 	fi  
 	
 	echo -e "\n创建验证标识..."
