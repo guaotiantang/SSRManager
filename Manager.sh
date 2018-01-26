@@ -783,8 +783,7 @@ Modify_config_enable(){
 	sed -i "${ssr_enable_num}"'s/"enable": '"$(echo ${enable})"',/"enable": '"$(echo ${ssr_enable})"',/' ${config_user_mudb_file}
 }
 Modify_user_api_server_pub_addr(){
-	sed -i "s/SERVER_PUB_ADDR = '${saddr}'/SER/env bash
-VER_PUB_ADDR = '${ssr_server_pub_addr}'/" ${config_user_api_file}
+	sed -i "s/SERVER_PUB_ADDR = '${saddr}'/SER/env basUB_ADDRbin/env = '${ssr_server_pub_addr}'/" ${config_user_api_file}
 }
 Modify_config_all(){
 	Modify_config_password
@@ -848,18 +847,18 @@ Download_SSR(){
 }
 Service_SSR(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/ssrmu_centos -O /etc/init.d/ssrmu; then
+		if ! wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/Manager_centos -O /etc/init.d/Manager; then
 			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
 		fi
-		chmod +x /etc/init.d/ssrmu
-		chkconfig --add ssrmu
-		chkconfig ssrmu on
+		chmod +x /etc/init.d/Manager
+		chkconfig --add Manager
+		chkconfig Manager on
 	else
-		if ! wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/ssrmu_debian -O /etc/init.d/ssrmu; then
+		if ! wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/Manager_debian -O /etc/init.d/Manager; then
 			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
 		fi
-		chmod +x /etc/init.d/ssrmu
-		update-rc.d -f ssrmu defaults
+		chmod +x /etc/init.d/Manager
+		update-rc.d -f Manager defaults
 	fi
 	echo -e "${Info} ShadowsocksR服务 管理脚本下载完成 !"
 }
@@ -951,11 +950,11 @@ Uninstall_SSR(){
 			done
 		fi
 		if [[ ${release} = "centos" ]]; then
-			chkconfig --del ssrmu
+			chkconfig --del Manager
 		else
-			update-rc.d -f ssrmu remove
+			update-rc.d -f Manager remove
 		fi
-		rm -rf ${ssr_folder} && rm -rf /etc/init.d/ssrmu
+		rm -rf ${ssr_folder} && rm -rf /etc/init.d/Manager
 		echo && echo " ShadowsocksR 卸载完成 !" && echo
 	else
 		echo && echo " 卸载已取消..." && echo
@@ -1341,11 +1340,11 @@ Clear_transfer_all(){
 }
 Clear_transfer_all_cron_start(){
 	crontab -l > "$file/crontab.bak"
-	sed -i "/ssrmu.sh/d" "$file/crontab.bak"
-	echo -e "\n${Crontab_time} /bin/bash $file/ssrmu.sh clearall" >> "$file/crontab.bak"
+	sed -i "/Manager.sh/d" "$file/crontab.bak"
+	echo -e "\n${Crontab_time} /bin/bash $file/SSRManager/Manager.sh clearall" >> "$file/crontab.bak"
 	crontab "$file/crontab.bak"
 	rm -r "$file/crontab.bak"
-	cron_config=$(crontab -l | grep "ssrmu.sh")
+	cron_config=$(crontab -l | grep "Manager.sh")
 	if [[ -z ${cron_config} ]]; then
 		echo -e "${Error} 定时所有用户流量清零启动失败 !" && exit 1
 	else
@@ -1354,10 +1353,10 @@ Clear_transfer_all_cron_start(){
 }
 Clear_transfer_all_cron_stop(){
 	crontab -l > "$file/crontab.bak"
-	sed -i "/ssrmu.sh/d" "$file/crontab.bak"
+	sed -i "/Manager.sh/d" "$file/crontab.bak"
 	crontab "$file/crontab.bak"
 	rm -r "$file/crontab.bak"
-	cron_config=$(crontab -l | grep "ssrmu.sh")
+	cron_config=$(crontab -l | grep "Manager.sh")
 	if [[ ! -z ${cron_config} ]]; then
 		echo -e "${Error} 定时所有用户流量清零停止失败 !" && exit 1
 	else
@@ -1385,19 +1384,19 @@ Start_SSR(){
 	SSR_installation_status
 	check_pid
 	[[ ! -z ${PID} ]] && echo -e "${Error} ShadowsocksR 正在运行 !" && exit 1
-	/etc/init.d/ssrmu start
+	/etc/init.d/Manager start
 }
 Stop_SSR(){
 	SSR_installation_status
 	check_pid
 	[[ -z ${PID} ]] && echo -e "${Error} ShadowsocksR 未运行 !" && exit 1
-	/etc/init.d/ssrmu stop
+	/etc/init.d/Manager stop
 }
 Restart_SSR(){
 	SSR_installation_status
 	check_pid
-	[[ ! -z ${PID} ]] && /etc/init.d/ssrmu stop
-	/etc/init.d/ssrmu start
+	[[ ! -z ${PID} ]] && /etc/init.d/Manager stop
+	/etc/init.d/Manager start
 }
 View_Log(){
 	SSR_installation_status

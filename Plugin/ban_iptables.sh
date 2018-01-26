@@ -456,7 +456,7 @@ if [[ ! -z $action ]]; then
 	[[ $action = "unbanall" ]] && UnBan_ALL && exit 0
 fi
 echo && echo -e " iptables防火墙 封禁管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- Toyo | doub.io/shell-jc2 --
+  -- SSRManager --
 
   ${Green_font_prefix}0.${Font_color_suffix} 查看 当前封禁列表
 ————————————
