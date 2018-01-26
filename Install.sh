@@ -18,16 +18,16 @@ Installed=1
 cd /
 echo -e "\n \n \n 正在创建安装目录..."
 
-	if [[ ! -d "/SSRManager/"]]; then  
+	if [ ! -d "/SSRManager/"]; then  
 	　Installed=0
 		mkdir /SSRManager/
 	fi 
 	 
-	if [[ ! -d "/SSRManager/UserDate/"]]; then  
+	if [ ! -d "/SSRManager/UserDate/"]; then  
 		mkdir /SSRManager/UserDate/
 	fi  
 	
-	if [[ ! -d "/SSRManager/ShellTmp/"]]; then  
+	if [ ! -d "/SSRManager/ShellTmp/"]; then  
 		mkdir /SSRManager/ShellTmp/
 	fi  
 	
