@@ -1713,7 +1713,7 @@ else
  ${Green_font_prefix}14.${Font_color_suffix} 其他功能
  "
 	menu_status
-	echo && stty erase '^H' && read -p "请输入数字 [1-14]：" num
+	echo && stty erase '^H' && read -p "请输入数字 [1-15]：" num
 case "$num" in
 	1)
 	Install_SSR
@@ -1757,8 +1757,11 @@ case "$num" in
 	14)
 	Other_functions
 	;;
+	15)
+	Update_Shell
+	;;
 	*)
-	echo -e "${Error} 请输入正确的数字 [1-14]"
+	echo -e "${Error} 请输入正确的数字 [1-15]"
 	;;
 esac
 fi
