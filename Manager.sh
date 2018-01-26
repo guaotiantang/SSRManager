@@ -1341,7 +1341,7 @@ Clear_transfer_all(){
 Clear_transfer_all_cron_start(){
 	crontab -l > "$file/crontab.bak"
 	sed -i "/Manager.sh/d" "$file/crontab.bak"
-	echo -e "\n${Crontab_time} /bin/bash $file/SSRManager/Manager.sh clearall" >> "$file/crontab.bak"
+	echo -e "\n${Crontab_time} /bin/bash $file/Manager.sh clearall" >> "$file/crontab.bak"
 	crontab "$file/crontab.bak"
 	rm -r "$file/crontab.bak"
 	cron_config=$(crontab -l | grep "Manager.sh")
@@ -1658,9 +1658,9 @@ Update_Shell(){
 		if [[ ${yn} == [Yy] ]]; then
 			cd "${file}"
 			if [[ $sh_new_type == "softs" ]]; then
-				wget -N --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/Manager.sh
+				wget -N --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Manager.sh
 			else
-				wget -N --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Plugin/Manager.sh
+				wget -N --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Manager.sh
 			fi
 			echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !"
 		else
