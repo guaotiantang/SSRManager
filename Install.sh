@@ -13,25 +13,22 @@ echo -e '
 #========================================================#
 '
 
-ManagerPatch="/SSRManager/"
-UDPatch="/SSRManager/UserDate/"
-TmpPatch="/SSRManager/ShellTmp/"
 Installed=1
 
 cd /
 echo -e "\n \n \n 正在创建安装目录..."
 
-	if [[ ! -d "${ManagerPatch}"]]; then  
+	if [[ ! -d "/SSRManager/"]]; then  
 	　Installed=0
-		mkdir "${ManagerPatch}"
+		mkdir /SSRManager/
 	fi 
 	 
-	if [[ ! -d "{$UDPatch}"]]; then  
-		mkdir "${$UDPatch}"
+	if [[ ! -d "/SSRManager/UserDate/"]]; then  
+		mkdir /SSRManager/UserDate/
 	fi  
 	
 	if [[ ! -d "${TmpPatch}"]]; then  
-		mkdir "${TmpPatch}"
+		mkdir /SSRManager/ShellTmp/
 	fi  
 	
 	echo -e "\n创建验证标识..."
