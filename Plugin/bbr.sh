@@ -230,7 +230,7 @@ case "$action" in
 	${action}bbr
 	;;
 	*)
-	echo "输入错误 !"
+	echo "输入错误!"
 	echo "用法: { install | start | stop | status }"
 	;;
 esac
