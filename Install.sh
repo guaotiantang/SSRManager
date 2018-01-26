@@ -18,16 +18,16 @@ Installed=1
 cd /
 echo -e "\n \n \n 正在创建安装目录..."
 
-	if [ ! -d "/SSRManager/"]; then  
+	if [ ! -d "/SSRManager/" ]; then  
 	　Installed=0
 		mkdir /SSRManager/
 	fi 
 	 
-	if [ ! -d "/SSRManager/UserDate/"]; then  
+	if [ ! -d "/SSRManager/UserDate/" ]; then  
 		mkdir /SSRManager/UserDate/
 	fi  
 	
-	if [ ! -d "/SSRManager/ShellTmp/"]; then  
+	if [ ! -d "/SSRManager/ShellTmp/" ]; then  
 		mkdir /SSRManager/ShellTmp/
 	fi  
 	
@@ -35,7 +35,7 @@ echo -e "\n \n \n 正在创建安装目录..."
 	echo -e "RETN[SSRManagerv2.0]RETN" >>/SSRManager/Verify.key
 	
 	if ! wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Manager.sh -O /SSRManager/Manager.sh; then
-			if Installed ==0;then
+			if Installed ==0 ;then
 				rm -rf "$ManagerPatch"
 			fi
 			echo -e "安装脚本下载失败 !" && exit 1
