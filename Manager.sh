@@ -1690,7 +1690,7 @@ check_sys
 action=$1
 if [[ "${action}" == "clearall" ]]; then
 	Clear_transfer_all
-else if [[ "${action}" == "InstallSSR" ]]; then
+elif [[ "${action}" == "InstallSSR" ]]; then
 	Install_SSR
 else
 	echo -e "  ShadowsocksR 管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
