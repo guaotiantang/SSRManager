@@ -5,12 +5,12 @@ export PATH
 #=================================================
 #	System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
 #	Description: Install the ShadowsocksR server and ShadowsocksR Manager
-#	Version: 2.0.00
+#	Version: 3.0.00
 #	Author: 孤傲
 #	Email: guaotiantang@outlook.com
 #=================================================
 
-sh_ver="2.0"
+sh_ver="3.0"
 filepath=$(cd "$(dirname "$0")"; pwd)
 file=$(echo -e "${filepath}"|awk -F "$0" '{print $1}')
 ssr_folder="/usr/local/shadowsocksr"
@@ -1713,6 +1713,7 @@ else
  ${Green_font_prefix}13.${Font_color_suffix} 查看 ShadowsocksR 日志
 ————————————
  ${Green_font_prefix}14.${Font_color_suffix} 其他功能
+ ${Green_font_prefix}15.${Font_color_suffix} 检测更新
  "
 	menu_status
 	echo && stty erase '^H' && read -p "请输入数字 [1-15]：" num
