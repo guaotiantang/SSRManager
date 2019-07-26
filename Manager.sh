@@ -3,8 +3,8 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 #=================================================
-#	System Required: CentOS 6+/Debian 6+/Ubuntu 14.04+
-#	Description: Install the ShadowsocksR Manager server
+#	Wellcome to the SSRManager
+#	Description: Install the ShadowsocksR mudbjson server
 #	Version: 1.0.26
 #	Author: NIXEVOL
 #=================================================
@@ -381,8 +381,8 @@ Set_config_port(){
 	while true
 	do
 	echo -e "请输入要设置的用户 端口(请勿重复, 用于区分)"
-	read -e -p "(默认: 9119):" ssr_port
-	[[ -z "$ssr_port" ]] && ssr_port="9119"
+	read -e -p "(默认: 2333):" ssr_port
+	[[ -z "$ssr_port" ]] && ssr_port="2333"
 	echo $((${ssr_port}+0)) &>/dev/null
 	if [[ $? == 0 ]]; then
 		if [[ ${ssr_port} -ge 1 ]] && [[ ${ssr_port} -le 65535 ]]; then
@@ -398,8 +398,8 @@ Set_config_port(){
 }
 Set_config_password(){
 	echo "请输入要设置的用户 密码"
-	read -e -p "(默认: SsrPassWord):" ssr_password
-	[[ -z "${ssr_password}" ]] && ssr_password="SsrPassWord"
+	read -e -p "(默认: ssrpassword):" ssr_password
+	[[ -z "${ssr_password}" ]] && ssr_password="ssrpassword"
 	echo && echo ${Separator_1} && echo -e "	密码 : ${Green_font_prefix}${ssr_password}${Font_color_suffix}" && echo ${Separator_1} && echo
 }
 Set_config_method(){
@@ -1800,8 +1800,8 @@ if [[ "${action}" == "clearall" ]]; then
 elif [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_ssr
 else
-	echo -e "  ShadowsocksR Manager ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  ---- NIXEVOL ----
+	echo -e "  ShadowsocksR MuJSON一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+  ---- By:NIXEVOL ----
 
   ${Green_font_prefix}1.${Font_color_suffix} 安装 ShadowsocksR
   ${Green_font_prefix}2.${Font_color_suffix} 更新 ShadowsocksR
