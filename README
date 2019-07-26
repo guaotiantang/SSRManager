@@ -1,0 +1,5 @@
+INSTALL SHELL
+
+Centos6+
+
+shell: wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Install.sh -O /SSRManager/Install.sh||bash Install
