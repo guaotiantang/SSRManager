@@ -1800,7 +1800,7 @@ if [[ "${action}" == "clearall" ]]; then
 elif [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_ssr
 else
-	echo -e "  ShadowsocksR MuJSON一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
+	echo -e "  ShadowsocksR Manager ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
   ---- By:NIXEVOL ----
 
   ${Green_font_prefix}1.${Font_color_suffix} 安装 ShadowsocksR
