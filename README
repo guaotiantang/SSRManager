@@ -2,4 +2,5 @@ INSTALL SHELL
 
 Centos6+
 
-shell: wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Install.sh -O /SSRManager/Install.sh||bash Install
+shell: 
+mkdir /SSRManager&&wget --no-check-certificate https://raw.githubusercontent.com/guaotiantang/SSRManager/master/Install.sh -O /SSRManager/Install.sh&&chmod +x /SSRManager/Manager.sh&&bash /SSRManager/Install.sh
